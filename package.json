@@ -2,12 +2,12 @@
   "name": "api-assignment",
   "version": "1.0.0",
   "description": "",
-  "main": "file.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnnaMartignano/API-Assignment.git"
   },
-  "author": "",
+  "author": "AnnaMartignano",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AnnaMartignano/API-Assignment/issues"
@@ -16,6 +16,15 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "mongoose": "^4.13.9",
     "url-parser": "0.0.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node file.js"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
   }
 }

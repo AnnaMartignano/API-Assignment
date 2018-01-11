@@ -75,18 +75,18 @@ router.route('/assignments')
   });
 
 //ROUTING /assignments/assignment
-router.route('/bears/:bear_id')
+router.route('/assignments/:assignment_id')
 
   //get assignment with a specific id
   .get(function(req, res) {
     Assignment.findById(req.params.assignment_id, function(err, assignment){
       if (err) {res.send(err);}
-      res.json(bear);
+      res.json(assignment);
     });
   })
 
   .put(function(req,res){
-    Assignment.findById(req.params.bear_id, function(err, assignment){
+    Assignment.findById(req.params.assignment_id, function(err, assignment){
       if(err){res.send(err);}
       assignment.studentID = req.body.studentID;
       assignment.assignmentType = req.body.assignmentType;
@@ -106,7 +106,7 @@ router.route('/bears/:bear_id')
 
   .delete(function(req,res){
     Assignment.remove({
-      _id: req.params.bear_id
+      _id: req.params.assignment_id
     }, function(err, assignment){
       if(err){res.send(err);}
       res.json({message:'Successfully deleted'});
